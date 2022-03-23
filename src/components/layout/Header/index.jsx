@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaSearch, FaShoppingBag, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import BrandLogo from '../../assets/img/Brand_logo.png';
+import BrandLogo from '../../../assets/img/Brand_logo.png';
 import { StyledHeader, StyledHeaderIcons, StyledLogo } from './Header.styled';
 
 export default function Header() {

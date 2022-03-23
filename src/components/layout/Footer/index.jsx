@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+import getYear from '@utils/getYear';
 import React from 'react';
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -33,7 +35,7 @@ export default function Footer() {
         <FaInstagram />
         <FaWhatsapp />
       </StyledSocialIcons>
-      <p>&copy;2022 Amapola Escarlata. All rights reserved</p>
+      <p>&copy;{getYear()} Amapola Escarlata. All Rights Reserved</p>
     </StyledFooter>
   );
 }
