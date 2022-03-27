@@ -3,7 +3,7 @@ import tw from 'twin.macro';
 
 export const StyledFooter = styled.div`
   ${tw`
-    bg-[#f4f4f4]
+    bg-light_gray
     px-16
     py-8
   `}
@@ -47,7 +47,7 @@ export const StyledFooterLogo = styled.div`
   ${tw`
   text-2xl
   font-semibold
-  text-[#0f1525]
+  text-dark_gray
 `}
   font-family: 'HelloVintage', sans-serif;
 `;
@@ -56,7 +56,7 @@ export const StyledCopyright = styled.div`
   ${tw`
   text-center
   pb-8
-  text-[#4a4e69]
+  text-independence
   text-sm
 `}
 `;

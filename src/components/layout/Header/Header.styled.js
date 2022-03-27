@@ -4,9 +4,9 @@ import tw from 'twin.macro';
 
 export const StyledHeader = styled.div`
   ${tw`
-    bg-[#f4f4f4]
+    bg-light_gray
     text-2xl
-    text-[#0f1525]
+    text-dark_gray
     font-bold
     flex
     justify-between

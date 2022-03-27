@@ -16,7 +16,7 @@ export default function Footer() {
   return (
     <StyledFooter>
       <StyledFooterLogo>
-        <h1>Amapola Escarlata</h1>
+        <Link to="/">Amapola Escarlata</Link>
       </StyledFooterLogo>
       <StyledFooterGrid>
         <StyledFooterNavs>
