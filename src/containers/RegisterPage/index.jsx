@@ -8,7 +8,24 @@ export default function RegisterPage() {
   return (
     <div>
       <Header />
-      <h1>This is register page</h1>
+      <h1>Create a new account</h1>
+      <form>
+        <input type="text" placeholder="Enter your username" />
+        <input type="email" name="" id="" placeholder="Enter your email" />
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="Enter your password"
+        />
+        <input
+          type="password"
+          name=""
+          id=""
+          placeholder="Confirm your password"
+        />
+        <button type="submit">Sign up</button>
+      </form>
       <Link to="/account/login">Back to login</Link>
       <Footer />
     </div>

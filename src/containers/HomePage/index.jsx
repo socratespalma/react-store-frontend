@@ -24,9 +24,12 @@ export default function HomePage() {
           <Link to="/">Learn more</Link>
         </div>
         <div>
-          who are we, what we do, where can you find us, when we started, why we
-          do what we do
-          {/* <p>We are</p> */}
+          <p>
+            We are an online store that sells vintage clothing and accesories
+            for women who want to stand out from the crowd with their unique
+            style. Our work is to provide a path for the modern woman to bring
+            the attention on every room with quality pieces.
+          </p>
         </div>
         <div>
           <h1>Featured products</h1>

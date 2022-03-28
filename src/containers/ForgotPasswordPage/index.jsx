@@ -8,7 +8,12 @@ export default function ForgotPasswordPage() {
   return (
     <div>
       <Header />
-      <h1>This is the forgot password page</h1>
+      <h1>Password recovery</h1>
+      <h2>We will send you an email to reset your password</h2>
+      <form>
+        <input type="email" name="" id="" placeholder="Enter your email" />
+        <button type="submit">Submit</button>
+      </form>
       <Link to="/account/login">Back to login</Link>
       <Footer />
     </div>
