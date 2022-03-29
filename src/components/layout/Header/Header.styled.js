@@ -12,14 +12,13 @@ export const StyledHeader = styled.div`
     justify-between
     items-center
   `}
-  padding: 1rem 3rem;
+  padding: 0.75rem 3rem;
 `;
 
 export const StyledHeaderIcons = styled.section`
   ${tw`
     flex
-    justify-between
-    w-32
+    gap-8
   `}
 `;
 

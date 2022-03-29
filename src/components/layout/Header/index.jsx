@@ -1,7 +1,7 @@
 import React from 'react';
-import { FaSearch, FaShoppingBag, FaUserAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import BrandLogo from '../../../assets/img/Brand_logo.png';
+import Navbar from '../Navbar';
 import { StyledHeader, StyledHeaderIcons, StyledLogo } from './Header.styled';
 
 export default function Header() {
@@ -12,11 +12,7 @@ export default function Header() {
         <Link to="/">Amapola Escarlata</Link>
       </StyledLogo>
       <StyledHeaderIcons>
-        <FaSearch />
-        <Link to="/account/login">
-          <FaUserAlt />
-        </Link>
-        <FaShoppingBag />
+        <Navbar />
       </StyledHeaderIcons>
     </StyledHeader>
   );
