@@ -11,15 +11,23 @@ export const StyledHeader = styled.div`
     flex
     justify-between
     items-center
+    w-full
+    top-0
+    fixed
+    z-[100]
+    h-[4.5rem]
+    py-4
+    px-8
   `}
-  padding: 0.75rem 3rem;
-`;
 
-export const StyledHeaderIcons = styled.section`
-  ${tw`
-    flex
-    gap-8
-  `}
+  .logo {
+    width: 3.3rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 5rem;
+    padding: 1rem 3rem;
+  }
 `;
 
 export const StyledLogo = styled.div`
@@ -29,5 +37,7 @@ export const StyledLogo = styled.div`
     justify-between
     w-52
   `}
+
+  z-index: 90;
   font-family: 'HelloVintage', sans-serif;
 `;

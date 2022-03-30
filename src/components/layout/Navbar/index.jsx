@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { FiMenu, FiSearch, FiShoppingBag, FiX } from 'react-icons/fi';
 import { NavLink } from 'react-router-dom';
-import { StyledNavbar } from './Navbar.styled';
+import { StyledNavbar, StyledNavIcons } from './Navbar.styled';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,53 +30,65 @@ export default function Navbar() {
 
   useEffect(() => {
     if ((isOpen && size < 1024) || size >= 1024) {
-      // navRef
-      // showNavRef
+      navRef.current.style.visibility = 'visible';
+      showNavRef.current.style.transform = 'translateX(0)';
     } else {
-      // navRef
-      // showNavRef
+      navRef.current.style.visibility = 'hidden';
+      showNavRef.current.style.transform = 'translateX(-100%)';
     }
   }, [isOpen]);
 
   return (
     <>
       <StyledNavbar ref={navRef}>
-        <ul ref={showNavRef}>
-          <NavLink className="navlink" to="/" onClick={handleClick}>
-            Dresses
-          </NavLink>
-          <NavLink className="navlink" to="/" onClick={handleClick}>
-            Clothing
-          </NavLink>
-          <NavLink className="navlink" to="/" onClick={handleClick}>
-            Accesories
-          </NavLink>
-          <NavLink className="navlink" to="/" onClick={handleClick}>
-            Collections
-          </NavLink>
-          <NavLink
-            className="navlink"
-            to="/account/login"
-            onClick={handleClick}
-          >
-            Log In
-          </NavLink>
+        <ul className="menu-nav" ref={showNavRef}>
+          <li className="navitem">
+            <NavLink className="navlink" to="/" onClick={handleClick}>
+              Dresses
+            </NavLink>
+          </li>
+          <li className="navitem">
+            <NavLink className="navlink" to="/" onClick={handleClick}>
+              Clothing
+            </NavLink>
+          </li>
+          <li className="navitem">
+            <NavLink className="navlink" to="/" onClick={handleClick}>
+              Accesories
+            </NavLink>
+          </li>
+          <li className="navitem">
+            <NavLink className="navlink" to="/" onClick={handleClick}>
+              Collections
+            </NavLink>
+          </li>
+          <li className="navitem">
+            <NavLink
+              className="navlink"
+              to="/account/login"
+              onClick={handleClick}
+            >
+              Log In
+            </NavLink>
+          </li>
         </ul>
       </StyledNavbar>
 
-      <button type="button">
-        <FiSearch />
-      </button>
-      <button type="button">
-        <FiShoppingBag />
-      </button>
-
-      <button
-        type="button"
-        onClick={() => setIsOpen((prevState) => !prevState)}
-      >
-        {isOpen ? <FiX /> : <FiMenu />}
-      </button>
+      <StyledNavIcons>
+        <button type="button">
+          <FiSearch />
+        </button>
+        <button type="button">
+          <FiShoppingBag />
+        </button>
+        <button
+          type="button"
+          className="menu-btn"
+          onClick={() => setIsOpen((prevState) => !prevState)}
+        >
+          {isOpen ? <FiX /> : <FiMenu />}
+        </button>
+      </StyledNavIcons>
     </>
   );
 }
