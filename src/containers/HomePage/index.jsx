@@ -5,12 +5,13 @@ import { StyledFlex } from '@styles/Flex.styled';
 import React from 'react';
 import { BiWorld } from 'react-icons/bi';
 import { FaInstagram, FaStar } from 'react-icons/fa';
+import { FiChevronRight } from 'react-icons/fi';
 import { RiCustomerService2Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import {
-  DivCenter,
   StyledFeatures,
   StyledHero,
+  StyledInsta,
   StyledNewsletter
 } from './HomePage.styled';
 
@@ -60,44 +61,54 @@ export default function HomePage() {
         <StyledFeatures>
           <section>
             <FaStar className="icon-feature" />
-            <h3>Quality and durability</h3>
+            <h3>Quality and Durability</h3>
             <p>Our collections are made with high quality materials </p>
           </section>
           <section>
             <RiCustomerService2Fill className="icon-feature" />
-            <h3>24/7 customer support</h3>
+            <h3>24/7 Customer Support</h3>
             <p>We help people with all their doubts</p>
           </section>
           <section>
             <BiWorld className="icon-feature" />
-            <h3>Worldwide shipping</h3>
+            <h3>Worldwide Shipping</h3>
             <p>We provide free shipping in orders over 99$</p>
           </section>
         </StyledFeatures>
-        <DivCenter>
-          <FaInstagram />
-          <h1>Follow us on Instagram @amapola_escarlata</h1>
+        <StyledInsta>
+          {/* <DivCenter> */}
+          <FaInstagram className="icon-instasection" />
+          <h1>
+            Follow us on Instagram{' '}
+            <span className="insta-username">@amapola_escarlata</span>
+          </h1>
           <h2>Check out our favorite looks and inspiration here </h2>
           <a
             href="https://www.instagram.com/amapola_escarlata/"
             target="_blank"
             rel="noreferrer"
+            className="insta-cta"
           >
             Learn more
+            <FiChevronRight className="chevron" />
           </a>
-        </DivCenter>
+          {/* </DivCenter> */}
+        </StyledInsta>
+
         <StyledNewsletter>
-          <DivCenter>
-            <h1>Subscribe to our newsletter</h1>
-            <h2>
-              Sign up for our newsletter to get exclusive deals, discounts, and
-              more.
-            </h2>
-            <form onSubmit={handleSubmit}>
-              <input type="text" placeholder="Enter your email address" />
-              <button type="submit">Submit</button>
-            </form>
-          </DivCenter>
+          {/* <DivCenter> */}
+          <h1>Subscribe to our newsletter</h1>
+          <h2>
+            Sign up for our newsletter to get exclusive deals, discounts, and
+            more.
+          </h2>
+          <form onSubmit={handleSubmit}>
+            <input type="text" placeholder="Enter your email address" />
+            <button type="submit" className="submit-btn">
+              Sign Up
+            </button>
+          </form>
+          {/* </DivCenter> */}
         </StyledNewsletter>
       </section>
       <Footer />
