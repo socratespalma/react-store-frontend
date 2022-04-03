@@ -1,11 +1,67 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/prefer-default-export */
+import hero from '@assets/img/Hero.jpg';
 import styled from 'styled-components';
 import tw, { theme } from 'twin.macro';
 
 export const StyledHero = styled.div`
   ${tw`
-bg-cotton_candy
+  h-screen
+  bg-left-top
+  bg-cover
+  bg-no-repeat
+  flex
+  flex-col
+  justify-center
+  text-center
+  lg:items-start
+  items-center
+  text-white
+  gap-6
+  px-4
+  lg:px-10
 `}
+  background-image: url(${hero});
+
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    background-color: ${theme`colors.white`};
+    color: ${theme`colors.dark_gray`};
+    font-weight: 500;
+    padding: 0.8rem;
+    width: 9rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+
+    .chevron {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: ${theme`colors.white`};
+      text-decoration: underline;
+      transition: all 0.5s ease-in-out;
+    }
+  }
+
+  .main-verb {
+    color: ${theme`colors.mauve`};
+    text-decoration: underline;
+  }
 `;
 
 export const StyledFeatures = styled.div`
@@ -51,11 +107,11 @@ export const StyledFeatures = styled.div`
   }
 `;
 
-export const DivCenter = styled.div`
-  ${tw`
-text-center
-`}
-`;
+// export const DivCenter = styled.div`
+//   ${tw`
+// text-center
+// `}
+// `;
 
 export const StyledInsta = styled.div`
   ${tw`
@@ -82,7 +138,7 @@ export const StyledInsta = styled.div`
     color: ${theme`colors.independence`};
   }
 
-  .insta-cta {
+  .cta {
     background-color: ${theme`colors.independence`};
     color: white;
     font-weight: 500;
@@ -116,7 +172,7 @@ export const StyledInsta = styled.div`
 
 export const StyledNewsletter = styled.div`
   ${tw`
-    bg-cotton_candy
+    bg-mauve
     px-10
     py-24
     flex
@@ -132,7 +188,7 @@ export const StyledNewsletter = styled.div`
 
   h2 {
     font-size: 1.2rem;
-    /* font-weight: 300; */
+    font-weight: 300;
   }
 
   input[type='text'] {
@@ -147,5 +203,55 @@ export const StyledNewsletter = styled.div`
     padding: 0.5rem;
     width: 5rem;
     border: solid 1px ${theme`colors.dark_gray`};
+  }
+`;
+
+export const StyledMainCopy = styled.div`
+  ${tw`
+  bg-cotton_candy
+  text-dark_gray
+  py-20
+  px-10
+  lg:px-44
+  flex
+  flex-col
+  text-center
+  gap-6
+`}
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-weight: 300;
+    /* font-size: 0.9rem; */
+  }
+
+  .cta {
+    background-color: ${theme`colors.white`};
+    color: ${theme`colors.dark_gray`};
+    font-weight: 500;
+    padding: 0.8rem;
+    width: 9rem;
+    border-radius: 0.5rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+
+    .chevron {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: ${theme`colors.cotton_candy`};
+      color: ${theme`colors.dark_gray`};
+      text-decoration: underline;
+      transition: all 0.5s ease-in-out;
+    }
   }
 `;

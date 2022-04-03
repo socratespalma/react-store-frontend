@@ -12,6 +12,7 @@ import {
   StyledFeatures,
   StyledHero,
   StyledInsta,
+  StyledMainCopy,
   StyledNewsletter
 } from './HomePage.styled';
 
@@ -25,25 +26,28 @@ export default function HomePage() {
       <Header />
       <section>
         <StyledHero>
-          <h1>Hero</h1>
-          <h2>We stand out by thinking differently</h2>
-          <h3>We provide the best experience to our customers</h3>
-          <Link to="/">Learn more</Link>
+          <h1>
+            We stand out by thinking{' '}
+            <span className="main-verb">differently</span>
+          </h1>
+          <h2>We provide the best experience to our customers</h2>
+          <Link to="/" className="hero-cta">
+            Discover
+            <FiChevronRight className="chevron" />
+          </Link>
         </StyledHero>
-        <div>
+        <StyledMainCopy>
+          <h1>Vintage for everyone</h1>
           <p>
-            We are an online store that sells vintage clothing and accesories
-            for women who want to stand out from the crowd with their unique
-            style.
+            We sell vintage clothing and accesories for women who want to stand
+            out from the crowd with a unique style by drawing the attention on
+            every room with quality pieces.
           </p>
-        </div>
-        <div>
-          <p>
-            {' '}
-            Our work is to provide a path for the modern woman to bring the
-            attention on every room with quality pieces.
-          </p>
-        </div>
+          <Link to="/pages/about-us" className="cta">
+            Learn more
+            <FiChevronRight className="chevron" />
+          </Link>
+        </StyledMainCopy>
         <div>
           <h1>Featured products</h1>
           {/* these are the most popular, a carousel */}
@@ -56,8 +60,6 @@ export default function HomePage() {
           <h1>Shop by category</h1>
           {/* here goes all categories, a grid component */}
         </div>
-        <h1>Features section</h1>
-
         <StyledFeatures>
           <section>
             <FaStar className="icon-feature" />
@@ -76,7 +78,6 @@ export default function HomePage() {
           </section>
         </StyledFeatures>
         <StyledInsta>
-          {/* <DivCenter> */}
           <FaInstagram className="icon-instasection" />
           <h1>
             Follow us on Instagram{' '}
@@ -87,16 +88,13 @@ export default function HomePage() {
             href="https://www.instagram.com/amapola_escarlata/"
             target="_blank"
             rel="noreferrer"
-            className="insta-cta"
+            className="cta"
           >
             Learn more
             <FiChevronRight className="chevron" />
           </a>
-          {/* </DivCenter> */}
         </StyledInsta>
-
         <StyledNewsletter>
-          {/* <DivCenter> */}
           <h1>Subscribe to our newsletter</h1>
           <h2>
             Sign up for our newsletter to get exclusive deals, discounts, and
@@ -108,7 +106,6 @@ export default function HomePage() {
               Sign Up
             </button>
           </form>
-          {/* </DivCenter> */}
         </StyledNewsletter>
       </section>
       <Footer />
