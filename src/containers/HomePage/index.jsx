@@ -1,6 +1,16 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/no-unresolved */
+import boina from '@assets/img/boinaAmarilla.jpg';
+import bolsa from '@assets/img/BolsasConchas.jpg';
+import calcetas from '@assets/img/calcetasMesh.jpg';
+import collars from '@assets/img/Cuellos.jpg';
+import mochila from '@assets/img/Mochila.jpg';
+import vestido from '@assets/img/vestidoLucy.jpg';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/splide.min.css';
+// import '@splidejs/splide/dist/css/themes/splide-default.min.css';
 import { StyledFlex } from '@styles/Flex.styled';
 import React from 'react';
 import { BiWorld } from 'react-icons/bi';
@@ -50,6 +60,54 @@ export default function HomePage() {
         </StyledMainCopy>
         <div>
           <h1>Featured products</h1>
+          {/* 
+          To do: create an object with all the options
+           */}
+          <Splide
+            options={{
+              type: 'loop',
+              gap: '1rem',
+              perPage: 3,
+              breakpoints: {
+                720: {
+                  perPage: 2
+                }
+              },
+              perMove: 1,
+              padding: { left: '3rem', right: '3rem' },
+              autoplay: true,
+              pauseOnHover: false,
+              resetProgress: false,
+              arrows: 'slider'
+              // height: '15rem'
+            }}
+            hasSliderWrapper
+          >
+            <SplideSlide>
+              <img src={collars} alt="Collar 1" />
+              {/* <h1>1</h1> */}
+            </SplideSlide>
+            <SplideSlide>
+              <img src={boina} alt="Collar 2" />
+              {/* <h1>2</h1> */}
+            </SplideSlide>
+            <SplideSlide>
+              <img src={mochila} alt="Collar 2" />
+              {/* <h1>3</h1> */}
+            </SplideSlide>
+            <SplideSlide>
+              <img src={vestido} alt="Collar 2" />
+              {/* <h1>4</h1> */}
+            </SplideSlide>
+            <SplideSlide>
+              <img src={bolsa} alt="Collar 2" />
+              {/* <h1>5</h1> */}
+            </SplideSlide>
+            <SplideSlide>
+              <img src={calcetas} alt="Collar 2" />
+              {/* <h1>5</h1> */}
+            </SplideSlide>
+          </Splide>
           {/* these are the most popular, a carousel */}
         </div>
         <div>
