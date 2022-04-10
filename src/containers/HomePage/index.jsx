@@ -19,11 +19,14 @@ import { FiChevronRight } from 'react-icons/fi';
 import { RiCustomerService2Fill } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import {
+  StyledCarrousel,
   StyledFeatures,
   StyledHero,
   StyledInsta,
   StyledMainCopy,
-  StyledNewsletter
+  StyledNewsletter,
+  StyledProductGrid,
+  StyledProducts
 } from './HomePage.styled';
 
 export default function HomePage() {
@@ -58,64 +61,143 @@ export default function HomePage() {
             <FiChevronRight className="chevron" />
           </Link>
         </StyledMainCopy>
-        <div>
+        <StyledProducts>
           <h1>Featured products</h1>
           {/* 
           To do: create an object with all the options
            */}
-          <Splide
-            options={{
-              type: 'loop',
-              gap: '1rem',
-              perPage: 3,
-              breakpoints: {
-                720: {
-                  perPage: 2
-                }
-              },
-              perMove: 1,
-              padding: { left: '3rem', right: '3rem' },
-              autoplay: true,
-              pauseOnHover: false,
-              resetProgress: false,
-              arrows: 'slider'
-              // height: '15rem'
-            }}
-            hasSliderWrapper
-          >
-            <SplideSlide>
-              <img src={collars} alt="Collar 1" />
-              {/* <h1>1</h1> */}
-            </SplideSlide>
-            <SplideSlide>
-              <img src={boina} alt="Collar 2" />
-              {/* <h1>2</h1> */}
-            </SplideSlide>
-            <SplideSlide>
-              <img src={mochila} alt="Collar 2" />
-              {/* <h1>3</h1> */}
-            </SplideSlide>
-            <SplideSlide>
-              <img src={vestido} alt="Collar 2" />
-              {/* <h1>4</h1> */}
-            </SplideSlide>
-            <SplideSlide>
-              <img src={bolsa} alt="Collar 2" />
-              {/* <h1>5</h1> */}
-            </SplideSlide>
-            <SplideSlide>
-              <img src={calcetas} alt="Collar 2" />
-              {/* <h1>5</h1> */}
-            </SplideSlide>
-          </Splide>
-          {/* these are the most popular, a carousel */}
-        </div>
-        <div>
+          <StyledCarrousel>
+            <Splide
+              options={{
+                type: 'loop',
+                gap: '1rem',
+                perPage: 4,
+                breakpoints: {
+                  720: {
+                    perPage: 2
+                  }
+                },
+                perMove: 1,
+                // padding: { left: '3rem', right: '3rem' },
+                autoplay: true,
+                pauseOnHover: false,
+                resetProgress: false,
+                arrows: 'slider'
+                // height: '15rem'
+              }}
+              hasSliderWrapper
+            >
+              <SplideSlide>
+                <img src={collars} alt="Collar 1" />
+                {/* <h1>1</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={boina} alt="Collar 2" />
+                {/* <h1>2</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={mochila} alt="Collar 2" />
+                {/* <h1>3</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={vestido} alt="Collar 2" />
+                {/* <h1>4</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={bolsa} alt="Collar 2" />
+                {/* <h1>5</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={calcetas} alt="Collar 2" />
+                {/* <h1>5</h1> */}
+              </SplideSlide>
+            </Splide>
+          </StyledCarrousel>
           <h1>New arrivals</h1>
+          <StyledCarrousel>
+            <Splide
+              options={{
+                type: 'loop',
+                gap: '1rem',
+                perPage: 5,
+                breakpoints: {
+                  720: {
+                    perPage: 2
+                  }
+                },
+                perMove: 1,
+                // padding: { left: '3rem', right: '3rem' },
+                autoplay: true,
+                pauseOnHover: false,
+                resetProgress: false,
+                arrows: 'slider'
+                // height: '15rem'
+              }}
+              hasSliderWrapper
+            >
+              <SplideSlide>
+                <img src={collars} alt="Collar 1" />
+                {/* <h1>1</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={boina} alt="Collar 2" />
+                {/* <h1>2</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={mochila} alt="Collar 2" />
+                {/* <h1>3</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={vestido} alt="Collar 2" />
+                {/* <h1>4</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={bolsa} alt="Collar 2" />
+                {/* <h1>5</h1> */}
+              </SplideSlide>
+              <SplideSlide>
+                <img src={calcetas} alt="Collar 2" />
+                {/* <h1>5</h1> */}
+              </SplideSlide>
+            </Splide>
+          </StyledCarrousel>
+
+          <h1>Shop by category</h1>
+          <StyledProductGrid>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Dresses</p>
+            </figure>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Accesories</p>
+            </figure>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Shirts</p>
+            </figure>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Shoes</p>
+            </figure>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Skirts</p>
+            </figure>
+            <figure>
+              <img src={bolsa} alt="Collar 2" />
+              <p>Hats</p>
+            </figure>
+          </StyledProductGrid>
+
+          {/* these are the most popular, a carousel */}
+        </StyledProducts>
+        <div>
+          {/* <h1>New arrivals</h1> */}
           {/* these are new items, a carousel */}
         </div>
         <div>
-          <h1>Shop by category</h1>
+          {/* <h1>Shop by category</h1> */}
           {/* here goes all categories, a grid component */}
         </div>
         <StyledFeatures>

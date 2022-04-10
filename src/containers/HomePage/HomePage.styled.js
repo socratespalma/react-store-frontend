@@ -64,6 +64,56 @@ export const StyledHero = styled.div`
   }
 `;
 
+export const StyledProducts = styled.div`
+  h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 6rem;
+  }
+`;
+
+export const StyledCarrousel = styled.div`
+  ${tw`
+  mx-16
+  my-10
+`}
+`;
+
+export const StyledProductGrid = styled.div`
+  ${tw`
+  grid
+  pt-8
+  pb-16
+  px-40
+  gap-x-9
+  // grid-cols-3
+`}
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+
+  img {
+    object-fit: cover;
+    /* position: relative; */
+    /* width: 10rem;
+    height: 10rem; */
+  }
+
+  p {
+    /* bottom: 100px; */
+    /* z-index: 50; */
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    /* background-color: rebeccapurple; */
+    position: relative;
+    /* padding: 6rem; */
+    text-align: center;
+    bottom: 50%;
+    /* left: 50%; */
+    /* top: 50%; */
+  }
+`;
+
 export const StyledFeatures = styled.div`
   ${tw`
     flex
