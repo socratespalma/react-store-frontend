@@ -13,13 +13,6 @@ export const StyledProducts = styled.div`
   }
 `;
 
-export const StyledCarrousel = styled.div`
-  ${tw`
-  mx-16
-  my-10
-`}
-`;
-
 export const StyledProductGrid = styled.div`
   ${tw`
   grid
@@ -30,9 +23,15 @@ export const StyledProductGrid = styled.div`
   // grid-cols-3
 `}
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  /* place-items: center; */
+  justify-content: center;
 
   img {
     object-fit: cover;
+    cursor: pointer;
+    box-shadow: 6px 6px 18px 0 rgba(0, 0, 0, 0.15);
+    /* opacity: 0.7; */
+
     /* position: relative; */
     /* width: 10rem;
     height: 10rem; */
@@ -42,8 +41,9 @@ export const StyledProductGrid = styled.div`
     /* bottom: 100px; */
     /* z-index: 50; */
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 600;
+    text-transform: uppercase;
     /* background-color: rebeccapurple; */
     position: relative;
     /* padding: 6rem; */
@@ -51,6 +51,12 @@ export const StyledProductGrid = styled.div`
     bottom: 50%;
     /* left: 50%; */
     /* top: 50%; */
+  }
+
+  @media screen and (min-width: 320px) {
+    p {
+      font-size: 2rem;
+    }
   }
 `;
 
