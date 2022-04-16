@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-
 import styled from 'styled-components';
 import tw, { theme } from 'twin.macro';
 
@@ -9,10 +8,10 @@ export const StyledLogin = styled.section`
     flex-col
     justify-center
     items-center
-    h-screen
+    py-36
+    // h-screen
     // w-80
     // bg-cotton_candy
-
 `}
 `;
 
@@ -25,14 +24,21 @@ export const StyledForm = styled.div`
     justify-center
     items-center
     w-96
-    // gap-3
+    gap-3
 `}
 
   h1 {
     font-size: 2rem;
     font-weight: 600;
     text-transform: uppercase;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
+  }
+
+  h2 {
+    /* font-size: 1.3rem; */
+    color: ${theme`colors.independence`};
+    text-align: center;
+    padding-bottom: 0.5rem;
   }
 
   input[type='email'],
@@ -48,8 +54,16 @@ export const StyledForm = styled.div`
     padding: 0.5rem 0.7rem;
     border-radius: 3px;
     font-weight: 600;
+  }
+
+  .submit-btn {
     color: ${theme`colors.white`};
     background-color: ${theme`colors.independence`};
+  }
+
+  .reset-btn {
+    color: ${theme`colors.independence`};
+    border: solid 2px ${theme`colors.independence`};
   }
 
   .form-control {
@@ -57,15 +71,15 @@ export const StyledForm = styled.div`
       flex
       flex-col
       w-full
-      gap-y-3
+      gap-y-2
     `}
   }
 
   .form-links {
     ${tw`
         text-lg
+        pb-[0.3rem]
       `}
-    padding-bottom: 0.3rem;
 
     &:nth-of-type(1) {
       padding-top: 1.5rem;

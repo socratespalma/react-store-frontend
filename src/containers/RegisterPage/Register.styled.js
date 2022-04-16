@@ -8,11 +8,13 @@ export const StyledRegister = styled.section`
     flex-col
     justify-center
     items-center
-    h-screen
+    py-36
+    // h-screen
+    // py-40
 `}
 `;
 
-export const StyledRegisterForm = styled.form`
+export const StyledRegisterForm = styled.div`
   ${tw`
     flex
     flex-col
@@ -30,6 +32,13 @@ export const StyledRegisterForm = styled.form`
     padding-bottom: 1rem;
   }
 
+  h2 {
+    /* font-size: 1.3rem; */
+    color: ${theme`colors.independence`};
+    text-align: center;
+    padding-bottom: 0.5rem;
+  }
+
   input[type='email'],
   input[type='text'],
   input[type='password'] {
@@ -44,15 +53,32 @@ export const StyledRegisterForm = styled.form`
     padding: 0.5rem 0.7rem;
     border-radius: 3px;
     font-weight: 600;
+  }
+
+  .submit-btn {
     color: ${theme`colors.white`};
     background-color: ${theme`colors.independence`};
+  }
+
+  .reset-btn {
+    color: ${theme`colors.independence`};
+    border: solid 2px ${theme`colors.independence`};
+  }
+
+  .form-control {
+    ${tw`
+      flex
+      flex-col
+      w-full
+      gap-y-2
+    `}
   }
 
   .form-links {
     ${tw`
         text-lg
+        pb-[0.3rem]
       `}
-    padding-bottom: 0.3rem;
 
     &:nth-of-type(1) {
       padding-top: 1.5rem;

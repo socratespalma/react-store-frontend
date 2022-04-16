@@ -1,4 +1,6 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable import/no-unresolved */
+import Textfield from '@components/auth/Textfield';
 import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 import { StyledFlex } from '@styles/Flex.styled';
@@ -6,7 +8,6 @@ import { Form, Formik } from 'formik';
 import Notiflix from 'notiflix';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Textfield from '../../components/auth/Textfield';
 import { StyledForm, StyledLogin } from './Login.styled';
 import loginSchema from './login.validation';
 
@@ -28,6 +29,10 @@ export default function LoginPage() {
           {({ handleSubmit, handleChange, handleBlur, values }) => (
             <StyledForm>
               <h1>Login</h1>
+              <h2>
+                If you already have an account, enter your email and password
+                below.
+              </h2>
               <Form
                 className="form-control"
                 onSubmit={handleSubmit}
@@ -54,7 +59,12 @@ export default function LoginPage() {
                   onBlur={handleBlur}
                   value={values.password}
                 />
-                <button type="submit">Sign in</button>
+                <button type="submit" className="submit-btn">
+                  Sign in
+                </button>
+                <button type="reset" className="reset-btn">
+                  Cancel
+                </button>
               </Form>
               <Link to="/account/forgot-password" className="form-links">
                 Forgot your password?
