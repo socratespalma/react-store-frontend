@@ -6,5 +6,7 @@ export const StyledFlex = styled.div`
   ${tw`
     flex
     flex-col
+    justify-between
+    h-screen
 `}
 `;

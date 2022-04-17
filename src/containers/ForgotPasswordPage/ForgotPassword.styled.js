@@ -56,6 +56,11 @@ export const StyledRecoveryForm = styled.div`
     background-color: ${theme`colors.independence`}; */
   }
 
+  .disabled-btn {
+    background-color: ${theme`colors.orange_soda`};
+    color: white;
+  }
+
   .submit-btn {
     color: ${theme`colors.white`};
     background-color: ${theme`colors.independence`};

@@ -14,19 +14,31 @@ import loginSchema from './login.validation';
 export default function LoginPage() {
   const navigate = useNavigate();
 
+  const initialValues = {
+    email: '',
+    password: ''
+  };
+
   return (
     <StyledFlex>
       <Header />
       <StyledLogin>
         <Formik
-          initialValues={{ email: '', password: '' }}
+          initialValues={initialValues}
           validationSchema={loginSchema}
           onSubmit={() => {
             navigate('/');
             Notiflix.Notify.success('Logged in successfully');
           }}
         >
-          {({ handleSubmit, handleChange, handleBlur, values }) => (
+          {({
+            handleSubmit,
+            handleChange,
+            handleBlur,
+            values,
+            dirty,
+            isValid
+          }) => (
             <StyledForm>
               <h1>Login</h1>
               <h2>
@@ -59,7 +71,13 @@ export default function LoginPage() {
                   onBlur={handleBlur}
                   value={values.password}
                 />
-                <button type="submit" className="submit-btn">
+                <button
+                  disabled={!(dirty && isValid)}
+                  type="submit"
+                  className={
+                    !(dirty && isValid) ? 'disabled-btn' : 'submit-btn'
+                  }
+                >
                   Sign in
                 </button>
                 <button type="reset" className="reset-btn">

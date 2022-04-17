@@ -13,24 +13,34 @@ import registerSchema from './register.validation';
 
 export default function RegisterPage() {
   const navigate = useNavigate();
+
+  const initialValues = {
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  };
+
   return (
     <StyledFlex>
       <Header />
       <StyledRegister>
         <Formik
-          initialValues={{
-            username: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
-          }}
+          initialValues={initialValues}
           validationSchema={registerSchema}
           onSubmit={() => {
             navigate('/');
             Notiflix.Notify.success('Account created successfully');
           }}
         >
-          {({ handleSubmit, handleChange, handleBlur, values }) => (
+          {({
+            handleSubmit,
+            handleChange,
+            handleBlur,
+            values,
+            dirty,
+            isValid
+          }) => (
             <StyledRegisterForm>
               <h1>Create account</h1>
               <h2>
@@ -80,7 +90,13 @@ export default function RegisterPage() {
                   onBlur={handleBlur}
                   value={values.confirmPassword}
                 />
-                <button type="submit" className="submit-btn">
+                <button
+                  disabled={!(dirty && isValid)}
+                  type="submit"
+                  className={
+                    !(dirty && isValid) ? 'disabled-btn' : 'submit-btn'
+                  }
+                >
                   Sign up
                 </button>
                 <button type="reset" className="reset-btn">

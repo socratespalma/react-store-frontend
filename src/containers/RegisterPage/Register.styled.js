@@ -55,6 +55,11 @@ export const StyledRegisterForm = styled.div`
     font-weight: 600;
   }
 
+  .disabled-btn {
+    background-color: ${theme`colors.orange_soda`};
+    color: white;
+  }
+
   .submit-btn {
     color: ${theme`colors.white`};
     background-color: ${theme`colors.independence`};

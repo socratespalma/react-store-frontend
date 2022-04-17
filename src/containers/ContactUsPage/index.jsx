@@ -3,7 +3,7 @@ import Footer from '@components/layout/Footer';
 import Header from '@components/layout/Header';
 import { StyledFlex } from '@styles/Flex.styled';
 import React from 'react';
-import { MdHelp, MdPolicy } from 'react-icons/md';
+import { MdHelp, MdPolicy, MdRealEstateAgent } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 import {
   StyledContact,
@@ -41,19 +41,38 @@ export default function ContactUsPage() {
         <StyledContactForm>
           {/* TODO: 
               Form validation
-              responsive web design
-              select with css and options
           */}
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="email" placeholder="Email Address" />
-          <input type="tel" placeholder="Phone Number" />
-          <select>
-            <option value="null">Choose a country</option>
+          <select className="dropdown fr-md fr-lg">
+            <option value="">Title</option>
+            <option value="">Ms</option>
+            <option value="">Mrs</option>
+            <option value="">Miss</option>
+            <option value="">Mr</option>
+          </select>
+          <input className="fr-md fr-lg" type="text" placeholder="First Name" />
+          <input className="sr-md fr-lg" type="text" placeholder="Last Name" />
+          <input
+            className="sr-md sr-lg"
+            type="email"
+            placeholder="Email Address"
+          />
+          <input
+            className="tr-md sr-lg"
+            type="tel"
+            placeholder="Phone Number"
+          />
+          <select className="dropdown tr-md sr-lg">
+            <option value="">Country</option>
             <option value="usa">United States</option>
+            <option value="canada">Canada</option>
             <option value="nic">Nicaragua</option>
           </select>
-          <textarea name="" id="" placeholder="Message" />
+          <textarea
+            className="four-md tr-lg"
+            name=""
+            id=""
+            placeholder="Message"
+          />
           <button type="submit">Submit</button>
         </StyledContactForm>
         <StyledSecondContact>
@@ -66,6 +85,13 @@ export default function ContactUsPage() {
           </StyledContactRedirect>
           <StyledContactRedirect>
             <MdPolicy className="icon" />
+            <p>Return policy</p>
+            <Link to="/policies/return-policy" className="contact-redirect">
+              Get more info
+            </Link>
+          </StyledContactRedirect>
+          <StyledContactRedirect>
+            <MdRealEstateAgent className="icon" />
             <p>Shipping policy</p>
             <Link to="/policies/shipping-policy" className="contact-redirect">
               Get more info

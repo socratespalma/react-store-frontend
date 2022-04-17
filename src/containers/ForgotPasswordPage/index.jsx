@@ -12,18 +12,27 @@ import { StyledRecovery, StyledRecoveryForm } from './ForgotPassword.styled';
 import recoverSchema from './recover.validation';
 
 export default function ForgotPasswordPage() {
+  const initialValues = { email: '' };
+
   return (
     <StyledFlex>
       <Header />
       <StyledRecovery>
         <Formik
-          initialValues={{ email: '' }}
+          initialValues={initialValues}
           validationSchema={recoverSchema}
           onSubmit={() => {
             Notiflix.Notify.success('Email sent successfully');
           }}
         >
-          {({ handleSubmit, handleBlur, handleChange, values }) => (
+          {({
+            handleSubmit,
+            handleBlur,
+            handleChange,
+            values,
+            dirty,
+            isValid
+          }) => (
             <StyledRecoveryForm>
               <h1>Password recovery</h1>
               <h2>We will send you an email to reset your password</h2>
@@ -46,7 +55,13 @@ export default function ForgotPasswordPage() {
                   onBlur={handleBlur}
                   value={values.email}
                 />
-                <button type="submit" className="submit-btn">
+                <button
+                  disabled={!(dirty && isValid)}
+                  type="submit"
+                  className={
+                    !(dirty && isValid) ? 'disabled-btn' : 'submit-btn'
+                  }
+                >
                   Submit
                 </button>
                 <button type="reset" className="reset-btn">
