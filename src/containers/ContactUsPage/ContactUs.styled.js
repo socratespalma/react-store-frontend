@@ -43,17 +43,76 @@ export const StyledMainText = styled.article`
 
 export const StyledContactForm = styled.div`
   ${tw`
+    py-9
+  `}
+
+  .contact-form {
+    ${tw`
     grid
     grid-cols-1
     gap-y-2
-    py-9
-    sm:grid-rows-6
+    sm:grid-rows-[7]
     sm:grid-cols-2
     sm:gap-2
-    lg:grid-rows-5
+    lg:grid-rows-4
     lg:grid-cols-3
     lg:gap-3
-  `}
+    `}
+
+    .invalid {
+      border: solid 1px red !important;
+    }
+
+    @media screen and (min-width: 640px) {
+      .fr-md {
+        grid-row: 1/2;
+      }
+      .sr-md {
+        grid-row: 2/3;
+      }
+      .tr-md {
+        grid-row: 3/4;
+      }
+      .four-md {
+        grid-row: 4/6;
+        grid-column: 1/-1;
+      }
+      button {
+        grid-row: 6/8;
+        grid-column: 2/-1;
+        width: 50%;
+        justify-self: end;
+        align-self: stretch;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      .fr-lg {
+        grid-row: 1/2;
+      }
+
+      .sr-lg {
+        grid-row: 2/3;
+      }
+
+      .tr-lg {
+        grid-row: 3/5;
+        grid-column: 1/-1;
+      }
+
+      button {
+        grid-row: 5/-1;
+        grid-column: 3/-1;
+        width: 50%;
+        justify-self: end;
+        align-self: stretch;
+      }
+    }
+
+    @media screen and (min-width: 1440px) {
+      width: 70rem;
+    }
+  }
 
   input,
   select,
@@ -86,8 +145,22 @@ export const StyledContactForm = styled.div`
     text-shadow: 0 0 0 #000;
   }
 
+  .error {
+    color: red;
+  }
+
+  .disabled-btn {
+    background-color: ${theme`colors.orange_soda`};
+    color: white;
+  }
+
+  .submit-btn {
+    color: ${theme`colors.white`};
+    background-color: ${theme`colors.independence`};
+  }
+
   .dropdown {
-    /* cursor: pointer; */
+    cursor: pointer;
     background-image: linear-gradient(45deg, transparent 50%, gray 50%),
       linear-gradient(135deg, gray 50%, transparent 50%),
       linear-gradient(to right, #ccc, #ccc);
@@ -104,7 +177,6 @@ export const StyledContactForm = styled.div`
         calc(100% - 2.5em) 0.5em;
       background-size: 5px 5px, 5px 5px, 1px 1.5em;
       background-repeat: no-repeat;
-      /* border-color: green; */
       /* outline: 0; */
     }
   }
@@ -117,56 +189,6 @@ export const StyledContactForm = styled.div`
     padding: 0.5rem 0.7rem;
     width: 100%;
     border-radius: 3px;
-    color: ${theme`colors.white`};
-    background-color: ${theme`colors.independence`};
-  }
-
-  @media screen and (min-width: 640px) {
-    .fr-md {
-      grid-row: 1/2;
-    }
-    .sr-md {
-      grid-row: 2/3;
-    }
-    .tr-md {
-      grid-row: 3/4;
-    }
-    .four-md {
-      grid-row: 4/6;
-      grid-column: 1/-1;
-    }
-    button {
-      grid-row: 6/-1;
-      grid-column: 2/-1;
-      width: 50%;
-      justify-self: end;
-    }
-  }
-
-  @media screen and (min-width: 1024px) {
-    .fr-lg {
-      grid-row: 1/2;
-    }
-
-    .sr-lg {
-      grid-row: 2/3;
-    }
-
-    .tr-lg {
-      grid-row: 3/5;
-      grid-column: 1/-1;
-    }
-
-    button {
-      grid-row: 5/-1;
-      grid-column: 3/4;
-      justify-self: end;
-      width: 50%;
-    }
-  }
-
-  @media screen and (min-width: 1440px) {
-    width: 70rem;
   }
 `;
 
