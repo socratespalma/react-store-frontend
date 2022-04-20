@@ -8,7 +8,8 @@ export const Styled404 = styled.section`
     text-center
     flex
     flex-col
-    gap-y-6
+    gap-y-4
+    md:gap-y-6
 `}
 
   .nf-img {
@@ -18,13 +19,37 @@ export const Styled404 = styled.section`
   }
 
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 600;
-    color: ${theme`colors.independence`};
   }
 
   p {
-    font-size: 1.2rem;
-    color: ${theme`colors.independence`};
+    font-size: 1.4rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    .nf-img {
+      height: 20rem;
+    }
+  }
+`;
+
+export const Styled404Nav = styled.nav`
+  ${tw`
+  flex
+  flex-col
+  gap-y-6
+  text-lg
+  font-medium
+  justify-center
+  md:flex-row
+  md:gap-x-6
+  lg:gap-x-9
+`}
+  place-items: center;
+
+  .nf-link:hover {
+    color: ${theme`colors.orange_soda`};
+    transition: all 0.5s ease-in-out;
   }
 `;
